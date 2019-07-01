@@ -1,0 +1,47 @@
+body {
+    background: grey;
+}
+
+.info {
+    max-width: 30%;
+    min-width: 40%;
+    margin: 0 auto;
+    border: solid 1px white;
+    background: black;
+    color: white;
+}
+
+.main {
+    border-bottom: solid 1px white;
+}
+
+.name {
+    text-align: center;
+    font-weight: bold;
+}
+
+.professions {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.country {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.social {
+    text-align: center;
+}
+
+.social div {
+    display: inline;
+}
+
+.social .vk img {
+    width: 30px;
+}
+
+.social .github img {
+    width: 40px;
+}
