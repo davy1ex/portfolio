@@ -1,0 +1,62 @@
+.left_col, .right_col {
+    height: 100%;
+}
+
+.left_col {
+    padding-right: 0px;
+    background: #4D4CC4;
+    color: white;
+}
+
+.wrapper {
+    margin: 50 auto 0 auto;
+    width: 80%;
+}
+
+.avatar {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.avatar img {
+    height: 200px;
+    border-radius: 100%;
+}
+
+.fio {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.7em;
+}
+
+.links {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.vk, .github {
+    height: 25px;
+}
+
+nav a {
+    color: white;
+}
+
+nav a:hover {
+    color: #C1C1C1;
+}
+
+nav .row:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+nav .row:not(:first-child, :last-child){
+    margin-top: 5px;
+}
+
+.right_col {
+    background: white;
+    padding-left: 0px;
+    color: black;
+}
