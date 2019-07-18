@@ -1,36 +1,72 @@
 <html>
 <head>
-    <title>dev1ex</title>
-    <link rel="stylesheet" href="{{ url_for("static", filename="css/index.css") }}">
+    <title>awesome</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/bootstrap.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/base.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/about.css") }}">
 </head>
 
 <body>
-    <div class="info">
-        <div class="main">
-            <div class="name">
-                Davydov Alexsey
-            </div>
-    
-            <div class="professions">
-                programmer
-            </div>
+    <div class="left_col row">
+        <div class="col-3">
+            <div class="wrapper_left">
+                <div class="avatar">
+                    <img src="{{ url_for("static", filename="img/duck.jpg") }}" alt="">
+                </div>
+                <div class="fio">
+                    Davydov Alexsey
+                </div>
+                
+                <div class="profession">
+                    WEB developer
+                </div>
 
-            <div class="country">
-                Russia
+                <div class="links row">
+                    <div class="col">
+                        <a  href="vk.com"><img class="vk" src="{{ url_for("static", filename="img/vk.png") }}" alt="vk"></a>
+                    </div>
+                    
+                    <div class="col">
+                        <a  href="vk.com"><img class="github" src="{{ url_for("static", filename="img/github.png") }}" alt="git"></a>
+                    </div>                    
+                </div>
+
+                <nav class="col">
+                    <a id="about" href="/about_me" onclick="about(); return false;" class="row" >ABOUT ME</a>
+                    <a class="row" href="/projects">PROJECTS</a>
+                </nav>
             </div>
         </div>
-        
-        
-        <div class="social">
-            <div class="vk">
-                <a href="vk.com/id154597302"><img src="{{ url_for("static", filename="img/vk.png") }}" alt=""></a>
-            </div>
-            
-            <div class="github">
-                <a href="github.com/davy1ex"><img src="{{ url_for("static", filename="img/github.png") }}" alt=""></a>
-            </div>
-        </div>        
+        <div id="content" class="right_col col-9"></div>
     </div>
+    
+    <script>
+        function about() {
+            // history.pushState("", "/about_me")
+            var stateObj = { foo: "bar" };
+            history.pushState(stateObj, "page 2", "about_me");
+
+            // 0. создание div, куда потом помещается раздел страницы
+            var div = document.getElementById('content');
+
+            // переменная, которая делает запросы
+            var xhr = new XMLHttpRequest();
+
+            // 2. Конфигурируем её: GET-запрос на URL '/about_me'
+            xhr.open('GET', '/about_me', false);
+
+            // 3. Отсылаем запрос
+            xhr.send();
+            
+            // 4. Пишу в div данные, возвращаемые сервером (html разметку)
+            div.innerHTML = xhr.responseText;
+            return false;
+        }
+
+        // сразу перенаправить на нужный раздел
+        about();       
+    </script>
+    
 </body>
 
 </html>
