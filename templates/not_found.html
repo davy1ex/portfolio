@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for("static", filename="css/sorry.css") }}">
+
+<div class="wrapper">
+    <div class="sorry">
+        <div class="text">
+            <h1>PAGE NOT FOUND</h1>
+        </div>
+
+        <img src="{{ url_for("static", filename="img/sorry.png") }}" alt="">
+    </div>
+</div>
+
+<script>
+    var stateObj = { foo: "bar" };
+    history.pushState(stateObj, "page 2", "error_4O4");
+</script>

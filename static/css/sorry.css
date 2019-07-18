@@ -1,0 +1,20 @@
+body {
+    background: #4D4CC4;
+    color: white;
+}
+
+.sorry {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.sorry > text {
+    width: 100%;
+    font-weight: bolder;
+    font-size: 2.1em;
+}
+
+.sorry img {
+    height: 300px;
+}
