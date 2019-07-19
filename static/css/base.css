@@ -1,16 +1,25 @@
-.left_col, .right_col {
+html{
+    height: 100%;
+}
+
+.main_row {
     height: 100%;
 }
 
 .left_col {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding-right: 0px;
     background: #4D4CC4;
     color: white;
 }
 
 .wrapper_left {
+    flex: 1 0 auto;
     margin: 50 auto 0 auto;
-    width: 80%;
+    width: auto;
+    text-align: center;
 }
 
 .avatar {
@@ -59,4 +68,13 @@ nav .row:not(:first-child, :last-child){
     background: white;
     padding-left: 0px;
     color: black;
+}
+
+footer {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+footer .text {
+    margin-bottom: 10px;
 }

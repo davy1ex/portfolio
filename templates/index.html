@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <div class="left_col row">
-        <div class="col-3">
+    <div class="main_row row">
+        <div class="left_col col-3">
             <div class="wrapper_left">
                 <div class="avatar">
                     <img src="{{ url_for("static", filename="img/duck.jpg") }}" alt="">
@@ -32,19 +32,26 @@
                 </div>
 
                 <nav class="col">
-                    <a id="about" href="/about_me" onclick="about(); return false;" class="row" >ABOUT ME</a>
+                    <a id="about" href="#" onclick="about(redirect=true); return false;" class="row" >ABOUT ME</a>
                     <a class="row" href="/projects">PROJECTS</a>
                 </nav>
+                
             </div>
+            <footer>
+                <div class="text">
+                    (c) All My
+                </div>                
+            </footer>
         </div>
-        <div id="content" class="right_col col-9"></div>
+        <div id="content" class="right_col col-9">{% block content %}{% endblock %}</div>
     </div>
     
     <script>
-        function about() {
-            // history.pushState("", "/about_me")
-            var stateObj = { foo: "bar" };
-            history.pushState(stateObj, "page 2", "about_me");
+        function about(redirect=false) {
+            if (redirect) {
+                var stateObj = { foo: "bar" };
+                history.pushState(stateObj, "page 2", "about_me");
+            }
 
             // 0. создание div, куда потом помещается раздел страницы
             var div = document.getElementById('content');
@@ -59,12 +66,10 @@
             xhr.send();
             
             // 4. Пишу в div данные, возвращаемые сервером (html разметку)
-            div.innerHTML = xhr.responseText;
+            div.innerHTML = xhr.responseText
             return false;
         }
-
-        // сразу перенаправить на нужный раздел
-        about();       
+        about();
     </script>
     
 </body>

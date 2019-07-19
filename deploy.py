@@ -11,7 +11,7 @@ def index():
 
 
 @app.route("/about_me")
-def test():
+def about():
     return render_template("about.html")
 
 
@@ -20,5 +20,5 @@ def not_found(e):
     return render_template("not_found.html"), 404
 
 
-# if __name__ == "__main__":
-#     app.run()
+if __name__ == "__main__":
+    app.run()
