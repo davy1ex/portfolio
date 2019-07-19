@@ -20,5 +20,5 @@ def not_found(e):
     return render_template("not_found.html"), 404
 
 
-# if __name__ == "__main__":
-#     app.run()
+if __name__ == "__main__":
+    app.run()

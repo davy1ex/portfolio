@@ -1,16 +1,25 @@
+.row {
+    height: 100%;
+}
+
 .left_col, .right_col {
     height: 100%;
 }
 
 .left_col {
+    width: 30%;
     padding-right: 0px;
     background: #4D4CC4;
     color: white;
 }
 
+.col-3 {
+    width: 30%;
+}
+
 .wrapper_left {
     margin: 50 auto 0 auto;
-    width: 80%;
+    width: 90%;
 }
 
 .avatar {
