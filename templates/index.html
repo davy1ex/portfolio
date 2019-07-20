@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ url_for("static", filename="css/bootstrap.css") }}">
     <link rel="stylesheet" href="{{ url_for("static", filename="css/base.css") }}">
     <link rel="stylesheet" href="{{ url_for("static", filename="css/about.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/projects.css") }}">
 </head>
 
 <body>
@@ -32,8 +33,9 @@
                 </div>
 
                 <nav class="col">
-                    <a id="about" href="#" onclick="about(redirect=true); return false;" class="row" >ABOUT ME</a>
-                    <a class="row" href="/projects">PROJECTS</a>
+                    <a id="about" href="/about_me" onclick="show(url='about_me', redirect=true); return false;" class="row" >ABOUT ME</a>
+                    <a class="row" href="#" onclick="show(url='projects', redirect=true); return false;">PROJECTS</a>
+                    <a class="row" href="/admin/project">add projects</a>
                 </nav>
                 
             </div>
@@ -43,14 +45,14 @@
                 </div>                
             </footer>
         </div>
-        <div id="content" class="right_col col-9">{% block content %}{% endblock %}</div>
+        <div id="content" class="right_col col-9"></div>
     </div>
     
     <script>
-        function about(redirect=false) {
+        function show(url, redirect=false) {
             if (redirect) {
                 var stateObj = { foo: "bar" };
-                history.pushState(stateObj, "page 2", "about_me");
+                history.pushState(stateObj, "page 2", url);
             }
 
             // 0. создание div, куда потом помещается раздел страницы
@@ -60,7 +62,7 @@
             var xhr = new XMLHttpRequest();
 
             // 2. Конфигурируем её: GET-запрос на URL '/about_me'
-            xhr.open('GET', '/about_me', false);
+            xhr.open('GET', url, false);
 
             // 3. Отсылаем запрос
             xhr.send();
@@ -69,7 +71,7 @@
             div.innerHTML = xhr.responseText
             return false;
         }
-        about();
+        show(url="about_me");
     </script>
     
 </body>

@@ -1,0 +1,32 @@
+.projects > .row {
+    margin-right: -15px;
+    margin-left: 0;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.project {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.project img {
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.project_title {
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.project_description {
+    word-wrap: break-word;
+}
