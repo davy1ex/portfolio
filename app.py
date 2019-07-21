@@ -10,7 +10,7 @@ import random
 import os
 from flask_admin.contrib.sqla import ModelView
 
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 
 from config import Config
 
@@ -63,9 +63,16 @@ class ProjectModelView(ModelView):
     def edit_form(self, obj=None):
         return self._change_path_data(super(ProjectModelView, self).edit_form(obj))
     
-    
     def create_form(self, obj=None):
         return self._change_path_data(super(ProjectModelView, self).create_form(obj))
+    
+    def is_accessible(self):
+        if current_user.is_authenticated:
+            return current_user.login == "root"
+        else:
+            pass
+
+        
 
 
 admin.add_view(ProjectModelView(Project, db.session))
