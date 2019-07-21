@@ -14,6 +14,7 @@
                 <div class="avatar">
                     <img src="{{ url_for("static", filename="img/duck.jpg") }}" alt="">
                 </div>
+                
                 <div class="fio">
                     Davydov Alexsey
                 </div>
@@ -35,16 +36,25 @@
                 <nav class="col">
                     <a id="about" href="/about_me" onclick="show(url='about_me', redirect=true); return false;" class="row" >ABOUT ME</a>
                     <a class="row" href="#" onclick="show(url='projects', redirect=true); return false;">PROJECTS</a>
-                    <a class="row" href="/admin/project">add projects</a>
+                    
+                    {% if current_user.login == "root" %}
+                        <a class="row" href="/admin/project">ADD PROJECT</a>
+                    {% endif %}
                 </nav>
                 
             </div>
+            
             <footer>
                 <div class="text">
                     (c) All My
+                    <br>
+                    {% if current_user.login == "root" %}
+                        hello, root
+                    {% endif %}
                 </div>                
             </footer>
         </div>
+        
         <div id="content" class="right_col col-9"></div>
     </div>
     

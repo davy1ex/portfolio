@@ -10,6 +10,7 @@ import random
 import os
 from flask_admin.contrib.sqla import ModelView
 
+from flask_login import LoginManager
 
 from config import Config
 
@@ -20,8 +21,12 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+login = LoginManager(app)
+
 from models import Project
 admin = Admin(app, base_template='custom_admin.html')
+
+
 
 
 def prefix_name(obj, file_data):
