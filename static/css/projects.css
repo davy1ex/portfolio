@@ -7,23 +7,27 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     margin: 0 auto;
 }
 
 .project {
-    border: 1px solid black;
-    width: 50%;
+    width: 30%;
+    margin: 5px auto;
 }
 
 .project img {
-    height: auto;
-    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px 0 0;
+    max-width:100%;
+    height:auto;
+}
+
+.text {
+    padding: 0 3px;
     margin-top: 5px;
 }
 
 .project_title {
-    margin-top: 10px;
     font-weight: bolder;
 }
 

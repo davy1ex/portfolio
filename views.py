@@ -40,6 +40,3 @@ def about():
 def projects():
     projects = Project.query.all()
     return render_template("projects.html", projects=projects)
-
-
-
