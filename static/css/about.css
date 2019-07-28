@@ -9,10 +9,31 @@
     font-size: 1.7em;
 }
 
-.text {
+.about_me {
     margin-top: 50px;
 }
 
 .email {
     margin-top: 40px;
+}
+
+.progress_skills {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* margin: 0 auto; */
+}
+
+.skill:not(:first-child), .skill:not(:last-child) {
+    margin: auto;
+}
+
+.skill:first-child {
+    margin-right: auto;
+}
+
+.skill:last-child {
+    margin-left: auto;
 }

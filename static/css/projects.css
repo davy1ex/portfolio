@@ -1,0 +1,36 @@
+.projects > .row {
+    margin-right: -15px;
+    margin-left: 0;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.project {
+    width: 30%;
+    margin: 5px auto;
+}
+
+.project img {
+    border: 1px solid lightgray;
+    border-radius: 5px 5px 0 0;
+    max-width:100%;
+    height:auto;
+}
+
+.text {
+    padding: 0 3px;
+    margin-top: 5px;
+}
+
+.project_title {
+    font-weight: bolder;
+}
+
+.project_description {
+    word-wrap: break-word;
+}
